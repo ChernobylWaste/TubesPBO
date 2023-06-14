@@ -9,54 +9,51 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 /**
  *
  * @author Ahda
  */
+
 public class mysql {
     private String username_db = "root";
     private String password_db = "";
-    
-    public void connect(){
+    private Connection conn;
+
+    public mysql() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = null;
+            System.out.println("[!] Database connected.");
             
             // change the database before production
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?user=" + username_db + "&password=" + password_db);
-            System.out.println("[!] Database connected.");
-            conn.close();
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?", username_db, password_db);
         } catch (Exception e){
             System.out.println(e);
         }
     }
     
-    public Object get_user_data(String username, String password){
-        Statement state = null;
+    public Dictionary get_user_data(String username, String password) throws SQLException{
+        Statement state = conn.createStatement();
         ResultSet res = null;
-        Object data = null;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?user=" + username_db + "&password=" + password_db);
-            state = conn.createStatement();
-            
-            if(state.execute("SELECT * FROM users")) {
-                res = state.getResultSet();
+        
+        // Fetching data from sql
+        if(state.execute("SELECT * FROM users")) {
+            res = state.getResultSet();
+        }
+        
+        Dictionary<String, String> data = new Hashtable<>();
+        data.put("validate", "false");
+        while(res.next()) {
+            if(!res.getString("username").equals(username)) {
+                continue;
             }
-            
-            while(res.next()) {
-                if(!res.getString("username").equals(username)) {
-                    continue;
-                }
-                if(!res.getString("password").equals(password)){
-                    continue;
-                }
-                data = res.getString("data");
+            if(!res.getString("password").equals(password)){
+                continue;
             }
-            
-        } catch (Exception e) {
-            System.out.println(e);
+            data.put("validate", "true");
+            data.put("data",res.getString("data"));
         }
         return data;
     }
