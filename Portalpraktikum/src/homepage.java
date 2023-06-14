@@ -11,6 +11,7 @@
 import classes.handler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Dictionary;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,12 +22,6 @@ public class homepage extends javax.swing.JFrame {
      */
     public homepage() {
         initComponents();
-        handler db = new handler();
-        try {
-            db.check_database();
-        } catch (IOException ex) {
-            Logger.getLogger(homepage.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     /**
@@ -226,19 +221,22 @@ public class homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_username_fieldActionPerformed
 
     private void signin_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signin_buttonActionPerformed
-        handler db = new handler();
+        handler db = null;
         try {
-            Object validate = db.user_validation(username_field.getText(), password_field.getText());
-            System.out.println(validate);
-        } catch (FileNotFoundException ex) {
+            db = new handler(username_field.getText(), password_field.getText());
+        } catch (Exception ex) {
             System.out.println(ex);
         }
-
-        // Tombol Sign in
-        datapribadi dp = new datapribadi();
-        dp.show();
         
-        dispose();
+        if (!db.user_validation()){
+            System.out.println("User not found");
+        } else {
+            // Tombol Sign in
+            datapribadi dp = new datapribadi();
+            dp.show();
+        
+            dispose();
+        }
     }//GEN-LAST:event_signin_buttonActionPerformed
 
     /**
