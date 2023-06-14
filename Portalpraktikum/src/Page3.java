@@ -126,7 +126,10 @@ public class Page3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        datapribadi dp = new datapribadi();
+        dp.show();
+        
+        dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**

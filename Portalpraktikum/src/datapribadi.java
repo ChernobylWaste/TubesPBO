@@ -68,6 +68,11 @@ public class datapribadi extends javax.swing.JFrame {
         jToggleButton1.setBackground(new java.awt.Color(22, 120, 191));
         jToggleButton1.setForeground(new java.awt.Color(0, 0, 0));
         jToggleButton1.setText("LOGOUT");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -107,6 +112,11 @@ public class datapribadi extends javax.swing.JFrame {
         jToggleButton2.setBackground(new java.awt.Color(22, 120, 191));
         jToggleButton2.setForeground(new java.awt.Color(0, 0, 0));
         jToggleButton2.setText("ENROLL PRAKTIKUM");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -169,6 +179,22 @@ public class datapribadi extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // Tombol back ke homepage
+        homepage hp = new homepage();
+        hp.show();
+        
+        dispose();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        // Tombol Enroll
+        Page3 p3 = new Page3();
+        p3.show();
+        
+        dispose();
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**
      * @param args the command line arguments

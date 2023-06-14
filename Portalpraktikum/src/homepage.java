@@ -197,23 +197,29 @@ public class homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_username_fieldActionPerformed
 
     private void signin_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signin_buttonActionPerformed
-        // TODO add your handling code here:
-        String username = username_field.getText();
-        String password = password_field.getText();
+
+//        String username = username_field.getText();
+//        String password = password_field.getText();
+//        
+//        handler db = new handler();
+//        try {
+//            boolean valid = db.user_validation(username, password);
+//            if(valid){
+//                System.out.println(valid);
+//            } else {
+//                System.out.println(valid);
+//                
+//            
+//            }
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+
+        // Tombol Sign in
+        datapribadi dp = new datapribadi();
+        dp.show();
         
-        handler db = new handler();
-        try {
-            boolean valid = db.user_validation(username, password);
-            if(valid){
-                System.out.println(valid);
-            } else {
-                System.out.println(valid);
-                
-            
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        dispose();
     }//GEN-LAST:event_signin_buttonActionPerformed
 
     /**
