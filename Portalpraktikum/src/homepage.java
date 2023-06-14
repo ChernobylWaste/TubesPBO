@@ -48,6 +48,9 @@ public class homepage extends javax.swing.JFrame {
         signin_button = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        MBCLogo = new javax.swing.JLabel();
+        TeluLogo = new javax.swing.JLabel();
+        IMVLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,7 +81,6 @@ public class homepage extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(94, 71, 232));
 
-        username_field.setBackground(new java.awt.Color(255, 255, 255));
         username_field.setForeground(new java.awt.Color(102, 102, 102));
         username_field.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         username_field.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +89,6 @@ public class homepage extends javax.swing.JFrame {
             }
         });
 
-        password_field.setBackground(new java.awt.Color(255, 255, 255));
         password_field.setForeground(new java.awt.Color(102, 102, 102));
         password_field.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -158,21 +159,48 @@ public class homepage extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
+        MBCLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MBC.png"))); // NOI18N
+
+        TeluLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telu.png"))); // NOI18N
+
+        IMVLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMV.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(216, 216, 216)
+                .addGap(28, 28, 28)
+                .addComponent(TeluLogo)
+                .addGap(84, 84, 84)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(MBCLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IMVLogo)
+                .addGap(12, 12, 12))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(IMVLogo))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(TeluLogo)))
+                        .addGap(18, 18, 18)
+                        .addComponent(MBCLogo)
+                        .addGap(0, 11, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,6 +277,9 @@ public class homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IMVLogo;
+    private javax.swing.JLabel MBCLogo;
+    private javax.swing.JLabel TeluLogo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
