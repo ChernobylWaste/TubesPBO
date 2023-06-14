@@ -9,6 +9,7 @@
  */
 
 import classes.handler;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -197,23 +198,13 @@ public class homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_username_fieldActionPerformed
 
     private void signin_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signin_buttonActionPerformed
-
-//        String username = username_field.getText();
-//        String password = password_field.getText();
-//        
-//        handler db = new handler();
-//        try {
-//            boolean valid = db.user_validation(username, password);
-//            if(valid){
-//                System.out.println(valid);
-//            } else {
-//                System.out.println(valid);
-//                
-//            
-//            }
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
+        handler db = new handler();
+        try {
+            Object validate = db.user_validation(username_field.getText(), password_field.getText());
+            System.out.println(validate);
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex);
+        }
 
         // Tombol Sign in
         datapribadi dp = new datapribadi();
