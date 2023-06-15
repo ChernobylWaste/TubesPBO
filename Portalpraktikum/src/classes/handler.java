@@ -5,6 +5,7 @@
 package classes;
 
 import java.util.Dictionary;
+import java.util.Hashtable;
 
 /**
  *
@@ -12,7 +13,7 @@ import java.util.Dictionary;
  */
 public class handler {
     private mysql database = new mysql();
-    private Dictionary data;
+    private Dictionary data = new Hashtable<>();
     
     public handler(String username, char[] password){
         try{

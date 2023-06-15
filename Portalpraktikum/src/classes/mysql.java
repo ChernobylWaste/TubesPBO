@@ -39,24 +39,46 @@ public class mysql {
         ResultSet res = null;
         
         String pass = String.valueOf(password);
+        Dictionary<String, String> data = new Hashtable<>();
+        data.put("validate", "false");
         
         // Fetching data from sql
         if(state.execute("SELECT * FROM users")) {
             res = state.getResultSet();
+            while(res.next()) {
+                if(!res.getString("username").equals(username)) {
+                    continue;
+                }
+                if(!res.getString("password").equals(pass)){
+                    continue;
+                }
+                data.put("validate", "true");
+                data.put("data",res.getString("data"));
+            }
         }
         
-        Dictionary<String, String> data = new Hashtable<>();
-        data.put("validate", "false");
-        while(res.next()) {
-            if(!res.getString("username").equals(username)) {
-                continue;
-            }
-            if(!res.getString("password").equals(pass)){
-                continue;
-            }
-            data.put("validate", "true");
-            data.put("data",res.getString("data"));
-        }
         return data;
+    }
+    
+    public boolean validation(String username, char[] password) {
+        boolean valid = false;
+        ResultSet res = null;
+        String pass = String.valueOf(password);
+
+        
+        try{
+            Statement state = conn.createStatement();
+            if(state.execute("SELECT username, password FROM users")){
+                res = state.getResultSet();
+                System.out.println(res.getString("password"));
+                if(res.getString("password").equals(pass)){
+                    valid = true;
+                }
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return valid;
     }
 }
