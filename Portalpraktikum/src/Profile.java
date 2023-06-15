@@ -117,25 +117,25 @@ public class Profile extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(84, 91, 119));
         jLabel5.setText("PRODI  :");
 
-        nama_praktikan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        nama_praktikan.setText("-NAMA-");
-        nama_praktikan.addActionListener(new java.awt.event.ActionListener() {
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextField1.setText("-NAMA-");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nama_praktikanActionPerformed(evt);
             }
         });
 
-        nim_praktikan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        nim_praktikan.setText("-NIM-");
-        nim_praktikan.addActionListener(new java.awt.event.ActionListener() {
+        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextField2.setText("-NIM-");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nim_praktikanActionPerformed(evt);
             }
         });
 
-        prodi_praktikan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        prodi_praktikan.setText("-PRODI-");
-        prodi_praktikan.addActionListener(new java.awt.event.ActionListener() {
+        jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextField3.setText("-PRODI-");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prodi_praktikanActionPerformed(evt);
             }
@@ -201,6 +201,7 @@ public class Profile extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PRAKTIKUM YANG DIIKUTI");
 
+        jTable1.setBackground(new java.awt.Color(167, 236, 238));
         jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -321,9 +322,9 @@ public class Profile extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void nama_praktikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nama_praktikanActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nama_praktikanActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void nim_praktikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nim_praktikanActionPerformed
         // TODO add your handling code here:
