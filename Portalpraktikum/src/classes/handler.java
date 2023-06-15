@@ -16,7 +16,7 @@ public class handler {
     }
     
     public boolean user_validation(String username, char[] password){
-        username_save = username;
+        database.get_user_data(username);
         return database.validation(username, password) ? true : false;
     }
 }
