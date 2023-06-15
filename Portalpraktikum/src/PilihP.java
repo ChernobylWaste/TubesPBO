@@ -40,6 +40,10 @@ public class PilihP extends javax.swing.JFrame {
         FisdasButton = new javax.swing.JToggleButton();
         MBCLogo = new javax.swing.JLabel();
         IMVLogo = new javax.swing.JLabel();
+        hapusmbc = new javax.swing.JToggleButton();
+        hapusimv = new javax.swing.JToggleButton();
+        hapusdaskom = new javax.swing.JToggleButton();
+        hapusfisdas = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,21 +89,22 @@ public class PilihP extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(203, 241, 245));
 
         TabelListPrak.setAutoCreateRowSorter(true);
+        TabelListPrak.setBackground(new java.awt.Color(154, 179, 245));
         TabelListPrak.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         TabelListPrak.setForeground(new java.awt.Color(0, 0, 0));
         TabelListPrak.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "MBC", "TT3", "-->"},
-                {"2", "IMV", "TT3", "-->"},
-                {"3", "DASKOM", "TT1", "-->"},
-                {"4", "FISDAS", "TT1", "-->"}
+                {"1", "MBC", "TT3"},
+                {"2", "IMV", "TT3"},
+                {"3", "DASKOM", "TT1"},
+                {"4", "FISDAS", "TT1"}
             },
             new String [] {
-                " No", "Nama Lab", "Nama Praktikum", "Pilihan"
+                " No", "Nama Lab", "Nama Praktikum"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -120,6 +125,7 @@ public class PilihP extends javax.swing.JFrame {
             }
         });
 
+        MBCButton.setBackground(new java.awt.Color(117, 121, 231));
         MBCButton.setText("MBC");
         MBCButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +133,7 @@ public class PilihP extends javax.swing.JFrame {
             }
         });
 
+        IMVButton.setBackground(new java.awt.Color(29, 92, 99));
         IMVButton.setText("IMV");
         IMVButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +141,7 @@ public class PilihP extends javax.swing.JFrame {
             }
         });
 
+        DaskomButton.setBackground(new java.awt.Color(117, 121, 231));
         DaskomButton.setText("DASKOM");
         DaskomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,24 +160,67 @@ public class PilihP extends javax.swing.JFrame {
 
         IMVLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMV.png"))); // NOI18N
 
+        hapusmbc.setBackground(new java.awt.Color(117, 121, 231));
+        hapusmbc.setText("UNENROLL");
+        hapusmbc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusmbcActionPerformed(evt);
+            }
+        });
+
+        hapusimv.setBackground(new java.awt.Color(29, 92, 99));
+        hapusimv.setText("UNENROLL");
+        hapusimv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusimvActionPerformed(evt);
+            }
+        });
+
+        hapusdaskom.setBackground(new java.awt.Color(117, 121, 231));
+        hapusdaskom.setText("UNENROLL");
+        hapusdaskom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusdaskomActionPerformed(evt);
+            }
+        });
+
+        hapusfisdas.setText("UNENROLL");
+        hapusfisdas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hapusfisdasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(69, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MBCButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DaskomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FisdasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IMVButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(91, 91, 91))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(MBCButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hapusmbc, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(IMVButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hapusimv, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(DaskomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hapusdaskom, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(FisdasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(hapusfisdas, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
                 .addComponent(MBCLogo)
                 .addGap(18, 18, 18)
                 .addComponent(IMVLogo)
@@ -180,18 +231,26 @@ public class PilihP extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                        .addGap(75, 75, 75)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(MBCButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(IMVButton)
-                        .addGap(27, 27, 27)
-                        .addComponent(DaskomButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(FisdasButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                        .addGap(115, 115, 115)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MBCButton)
+                            .addComponent(hapusmbc))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IMVButton)
+                            .addComponent(hapusimv))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(DaskomButton)
+                            .addComponent(hapusdaskom))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FisdasButton)
+                            .addComponent(hapusfisdas))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(IMVLogo)
@@ -219,8 +278,8 @@ public class PilihP extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -259,6 +318,22 @@ public class PilihP extends javax.swing.JFrame {
     private void FisdasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FisdasButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FisdasButtonActionPerformed
+
+    private void hapusmbcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusmbcActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hapusmbcActionPerformed
+
+    private void hapusimvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusimvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hapusimvActionPerformed
+
+    private void hapusdaskomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusdaskomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hapusdaskomActionPerformed
+
+    private void hapusfisdasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusfisdasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hapusfisdasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,6 +381,10 @@ public class PilihP extends javax.swing.JFrame {
     private javax.swing.JTable TabelListPrak;
     private javax.swing.JLabel TeluLogo;
     private javax.swing.JLabel TeluLogo1;
+    private javax.swing.JToggleButton hapusdaskom;
+    private javax.swing.JToggleButton hapusfisdas;
+    private javax.swing.JToggleButton hapusimv;
+    private javax.swing.JToggleButton hapusmbc;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
