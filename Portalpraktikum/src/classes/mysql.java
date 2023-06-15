@@ -70,8 +70,8 @@ public class mysql {
             Statement state = conn.createStatement();
             if(state.execute("SELECT username, password FROM users")){
                 res = state.getResultSet();
-                System.out.println(res.getString("password"));
-                if(res.getString("password").equals(pass)){
+                res.next();
+                if(res.getString("password").equals(pass) && res.getString("username").equals(username)){
                     valid = true;
                 }
             }

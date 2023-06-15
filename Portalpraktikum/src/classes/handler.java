@@ -14,8 +14,12 @@ import java.util.Hashtable;
 public class handler {
     private mysql database = new mysql();
     private Dictionary data = new Hashtable<>();
+    private String username_save;
+    private char[] password_save;
     
     public handler(String username, char[] password){
+        username_save = username;
+        password_save = password;
         try{
             this.data = database.get_user_data(username, password);
         } catch (Exception e) {
@@ -24,10 +28,10 @@ public class handler {
     }
     
     public boolean user_validation(){
-        boolean valid = false;
-        if(data.get("validate").equals("true")){
-            valid = true;
-        }
-        return valid;
+//        if(data.get("validate").equals("true")){
+//            valid = true;
+//        }
+
+        return database.validation(username_save, password_save) ? true : false;
     }
 }
