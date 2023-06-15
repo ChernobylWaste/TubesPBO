@@ -95,4 +95,26 @@ public class mysql {
             System.out.println(e);
         }
     }
+    
+    public boolean checkPraktikan(String lab){
+        boolean check = false;
+        try {
+            Statement state = conn.createStatement();
+            User user = User.getInstance();
+            ResultSet res = null;
+            
+            if(state.execute("SELECT * FROM " + lab)) {
+                res = state.getResultSet();
+                while(res.next()){
+                    if(res.getString("praktikan").equals(user.getUsername())){
+                        check = true;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        
+        return check;
+    }
 }

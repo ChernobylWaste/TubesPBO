@@ -8,6 +8,7 @@
  * @author Just Mine
  */
 import classes.User;
+import classes.mysql;
 
 public class Profile extends javax.swing.JFrame {
 
