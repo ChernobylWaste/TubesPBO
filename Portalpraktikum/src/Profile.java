@@ -54,9 +54,9 @@ public class Profile extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelListPrak = new javax.swing.JTable();
         mbcinfo = new javax.swing.JTextField();
-        imvinfo = new javax.swing.JTextField();
         daskominfo = new javax.swing.JTextField();
         fisdasinfo = new javax.swing.JTextField();
+        imvinfo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -234,7 +234,8 @@ public class Profile extends javax.swing.JFrame {
                 {"1", "MBC", "TT3"},
                 {"2", "IMV", "TT3"},
                 {"3", "DASKOM", "TT1"},
-                {"4", "FISDAS", "TT1"}
+                {"4", "FISDAS", "TT1"},
+                {"----", "----", "----"}
             },
             new String [] {
                 " No", "Nama Lab", "Nama Praktikum"
@@ -264,17 +265,6 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
-        imvinfo.setEditable(false);
-        imvinfo.setBackground(new java.awt.Color(194, 222, 220));
-        imvinfo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        imvinfo.setForeground(new java.awt.Color(0, 0, 0));
-        imvinfo.setText("TIDAK MENGIKUTI");
-        imvinfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imvinfoActionPerformed(evt);
-            }
-        });
-
         daskominfo.setEditable(false);
         daskominfo.setBackground(new java.awt.Color(194, 222, 220));
         daskominfo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -297,6 +287,17 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
+        imvinfo.setEditable(false);
+        imvinfo.setBackground(new java.awt.Color(194, 222, 220));
+        imvinfo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        imvinfo.setForeground(new java.awt.Color(0, 0, 0));
+        imvinfo.setText("TIDAK MENGIKUTI");
+        imvinfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imvinfoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -313,10 +314,10 @@ public class Profile extends javax.swing.JFrame {
                                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mbcinfo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(imvinfo)
+                            .addComponent(mbcinfo)
                             .addComponent(daskominfo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(fisdasinfo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))))
+                            .addComponent(fisdasinfo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(imvinfo))))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -328,11 +329,11 @@ public class Profile extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(40, 40, 40)
                         .addComponent(mbcinfo)
-                        .addGap(37, 37, 37)
+                        .addGap(39, 39, 39)
                         .addComponent(imvinfo)
-                        .addGap(37, 37, 37)
+                        .addGap(27, 27, 27)
                         .addComponent(daskominfo)
                         .addGap(37, 37, 37)
                         .addComponent(fisdasinfo)))
@@ -408,10 +409,6 @@ public class Profile extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void mbcinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbcinfoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mbcinfoActionPerformed
-
     private void nim_praktikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nim_praktikanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nim_praktikanActionPerformed
@@ -432,9 +429,9 @@ public class Profile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nama_praktikan1ActionPerformed
 
-    private void imvinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imvinfoActionPerformed
+    private void mbcinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbcinfoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_imvinfoActionPerformed
+    }//GEN-LAST:event_mbcinfoActionPerformed
 
     private void daskominfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daskominfoActionPerformed
         // TODO add your handling code here:
@@ -443,6 +440,10 @@ public class Profile extends javax.swing.JFrame {
     private void fisdasinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fisdasinfoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fisdasinfoActionPerformed
+
+    private void imvinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imvinfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_imvinfoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -105,7 +105,7 @@ public class PilihP extends javax.swing.JFrame {
                 {"2", "IMV", "TT3"},
                 {"3", "DASKOM", "TT1"},
                 {"4", "FISDAS", "TT1"},
-                {"5", "-----", "TT2"}
+                {"-----", "-----", "----"}
             },
             new String [] {
                 " No", "Nama Lab", "Nama Praktikum"

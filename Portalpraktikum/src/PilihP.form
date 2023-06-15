@@ -265,7 +265,7 @@
                           <Data value="2"/>
                           <Data value="3"/>
                           <Data value="4"/>
-                          <Data value="5"/>
+                          <Data value="-----"/>
                         </Column>
                         <Column editable="true" title="Nama Lab" type="java.lang.Object">
                           <Data value="MBC"/>
@@ -279,7 +279,7 @@
                           <Data value="TT3"/>
                           <Data value="TT1"/>
                           <Data value="TT1"/>
-                          <Data value="TT2"/>
+                          <Data value="----"/>
                         </Column>
                       </Table>
                     </Property>
