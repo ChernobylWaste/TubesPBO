@@ -241,10 +241,9 @@ public class Home extends javax.swing.JFrame {
 
     private void signin_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signin_buttonActionPerformed
         handler db;
-        db = new handler(username_field.getText(), password_field.getPassword());
+        db = new handler();
         try {
-            if (!db.user_validation()){
-            System.out.println("User not found");
+            if (!db.user_validation(username_field.getText(), password_field.getPassword())){
             gaketemu.setText("User not found");
         } else {
             // Tombol Sign in
