@@ -272,7 +272,7 @@
                           <Data value="IMV"/>
                           <Data value="DASKOM"/>
                           <Data value="FISDAS"/>
-                          <Data value="AN"/>
+                          <Data value="-----"/>
                         </Column>
                         <Column editable="true" title="Nama Praktikum" type="java.lang.Object">
                           <Data value="TT3"/>
