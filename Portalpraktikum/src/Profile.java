@@ -116,7 +116,10 @@ public class Profile extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(84, 91, 119));
         jLabel5.setText("PRODI  :");
 
+        nama_praktikan.setEditable(false);
+        nama_praktikan.setBackground(new java.awt.Color(167, 236, 238));
         nama_praktikan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        nama_praktikan.setForeground(new java.awt.Color(0, 0, 0));
         nama_praktikan.setText("-NAMA-");
         nama_praktikan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,7 +127,10 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
+        nim_praktikan.setEditable(false);
+        nim_praktikan.setBackground(new java.awt.Color(167, 236, 238));
         nim_praktikan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        nim_praktikan.setForeground(new java.awt.Color(0, 0, 0));
         nim_praktikan.setText("-NIM-");
         nim_praktikan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +138,10 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
+        prodi_praktikan.setEditable(false);
+        prodi_praktikan.setBackground(new java.awt.Color(167, 236, 238));
         prodi_praktikan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        prodi_praktikan.setForeground(new java.awt.Color(0, 0, 0));
         prodi_praktikan.setText("-PRODI-");
         prodi_praktikan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +209,7 @@ public class Profile extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PRAKTIKUM YANG DIIKUTI");
 
+        jTable1.setBackground(new java.awt.Color(167, 236, 238));
         jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -214,6 +224,7 @@ public class Profile extends javax.swing.JFrame {
         ));
         jTable1.setRowHeight(66);
         jTable1.setRowMargin(50);
+        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jTable1.setShowGrid(true);
         jScrollPane1.setViewportView(jTable1);
 
