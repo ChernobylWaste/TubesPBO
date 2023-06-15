@@ -81,12 +81,12 @@ public class mysql {
         return valid;
     }
     
-    public void addPraktikan() {
+    public void addPraktikan(String lab) {
         try{
             Statement state = conn.createStatement();
             User user = User.getInstance();
-            boolean execute = state.execute("INSERT INTO mbc_praktikum(praktikan, nim, prodi) VALUES" + user.getUsername() + user.getNim() + user.getProdi());
-            if(execute) {
+            boolean execute = state.execute("INSERT INTO `" + lab + "`(`praktikan`, `nim`, `prodi`) VALUES ('" + user.getUsername() + "','" + user.getNim() + "','" + user.getProdi() + "')");
+            if(!execute) {
                 System.out.println("[?] new Praktikan inserted.");
             } else {
                 System.out.println("[!] Something went wrong.");

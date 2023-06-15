@@ -7,13 +7,18 @@
  *
  * @author Just Mine
  */
+import classes.mysql;
+
 public class PilihP extends javax.swing.JFrame {
 
     /**
      * Creates new form PilihP
      */
+    private mysql database;
+    
     public PilihP() {
         initComponents();
+        database = mysql.getInstance();
     }
 
     /**
@@ -311,18 +316,22 @@ public class PilihP extends javax.swing.JFrame {
 
     private void MBCButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MBCButtonActionPerformed
         // TODO add your handling code here:
+        database.addPraktikan("mbc_praktikum");
     }//GEN-LAST:event_MBCButtonActionPerformed
 
     private void IMVButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMVButtonActionPerformed
         // TODO add your handling code here:
+        database.addPraktikan("imv_praktikum");
     }//GEN-LAST:event_IMVButtonActionPerformed
 
     private void DaskomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaskomButtonActionPerformed
         // TODO add your handling code here:
+        database.addPraktikan("daskom_praktikum");
     }//GEN-LAST:event_DaskomButtonActionPerformed
 
     private void FisdasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FisdasButtonActionPerformed
         // TODO add your handling code here:
+        database.addPraktikan("fisdas_praktikum");
     }//GEN-LAST:event_FisdasButtonActionPerformed
 
     private void hapusmbcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusmbcActionPerformed
