@@ -18,11 +18,11 @@ public class Profile extends javax.swing.JFrame {
     public Profile() {
         initComponents();
         User user = User.getInstance();
-        nama_praktikan.setText(user.getUsername());
+        nama_praktikan1.setText(user.getUsername());
         handler db = new handler();
         mbcinfo.setText("Agus");
-        nim_praktikan.setText("1024298");
-        prodi_praktikan.setText("FTT");
+        nim_praktikan.setText(Integer.toString(user.getNim()));
+        prodi_praktikan.setText(user.getProdi());
     }
 
     /**
