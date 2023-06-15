@@ -8,11 +8,11 @@ package classes;
  *
  * @author Ahda
  */
-public class handler {
-    private mysql database = new mysql();
-    private String username_save;
-    
+public class handler {  
+    private mysql database;
     public handler(){
+        mysql.createDatabase();
+        database = mysql.getInstance();
     }
     
     public boolean user_validation(String username, char[] password){

@@ -16,20 +16,29 @@ import java.sql.ResultSet;
  */
 
 public class mysql {
+    private static mysql instance;
     private String username_db = "root";
     private String password_db = "";
     private Connection conn;
 
-    public mysql() {
+    private mysql() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("[!] Database connected.");
             
             // change the database before production
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?", username_db, password_db);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?", username_db, password_db);
         } catch (Exception e){
             System.out.println(e);
         }
+    }
+    
+    public static mysql getInstance(){
+        return instance;
+    }
+    
+    public static void createDatabase(){
+        instance = new mysql();
     }
     
     public void get_user_data(String username){
@@ -70,5 +79,20 @@ public class mysql {
             System.out.println(e);
         }
         return valid;
+    }
+    
+    public void addPraktikan() {
+        try{
+            Statement state = conn.createStatement();
+            User user = User.getInstance();
+            boolean execute = state.execute("INSERT INTO mbc_praktikum(praktikan, nim, prodi) VALUES" + user.getUsername() + user.getNim() + user.getProdi());
+            if(execute) {
+                System.out.println("[?] new Praktikan inserted.");
+            } else {
+                System.out.println("[!] Something went wrong.");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
 }

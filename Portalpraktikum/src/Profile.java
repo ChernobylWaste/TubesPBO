@@ -7,7 +7,6 @@
  *
  * @author Just Mine
  */
-import classes.handler;
 import classes.User;
 
 public class Profile extends javax.swing.JFrame {
@@ -19,7 +18,6 @@ public class Profile extends javax.swing.JFrame {
         initComponents();
         User user = User.getInstance();
         nama_praktikan1.setText(user.getUsername());
-        handler db = new handler();
         mbcinfo.setText("Agus");
         nim_praktikan.setText(Integer.toString(user.getNim()));
         prodi_praktikan.setText(user.getProdi());

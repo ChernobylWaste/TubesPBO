@@ -39,5 +39,9 @@ public class User {
     public String getProdi() {
         return prodi;
     }
+    
+    public void addPraktikum() {
+        
+    }
 }
 

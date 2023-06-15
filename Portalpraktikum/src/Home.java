@@ -15,8 +15,11 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    private handler db;
+    
     public Home() {
         initComponents();
+        db = new handler();
     }
 
     /**
@@ -240,8 +243,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_username_fieldActionPerformed
 
     private void signin_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signin_buttonActionPerformed
-        handler db;
-        db = new handler();
+//        handler db;
+//        db = new handler();
         try {
             if (!db.user_validation(username_field.getText(), password_field.getPassword())){
             gaketemu.setText("User not found");
