@@ -336,6 +336,7 @@ public class PilihP extends javax.swing.JFrame {
 
     private void hapusmbcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusmbcActionPerformed
         // TODO add your handling code here:
+        database.removePraktikan("mbc_praktikum");
     }//GEN-LAST:event_hapusmbcActionPerformed
 
     private void hapusimvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusimvActionPerformed

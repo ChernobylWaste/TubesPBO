@@ -117,4 +117,18 @@ public class mysql {
         
         return check;
     }
+    
+    public void removePraktikan(String lab) {
+        try{
+            Statement state = conn.createStatement();
+            User user = User.getInstance();
+            if(!state.execute("DELETE FROM `" + lab + "` WHERE praktikan='" + user.getUsername() + "'")){
+                System.out.println("[?] Praktikan has been removed.");
+            } else {
+                System.out.println("[!] Something went wrong.");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
 }
