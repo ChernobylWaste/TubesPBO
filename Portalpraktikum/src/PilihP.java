@@ -50,7 +50,8 @@ public class PilihP extends javax.swing.JFrame {
         TeluLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telu.png"))); // NOI18N
 
         jLabel2.setBackground(new java.awt.Color(255, 217, 223));
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(84, 91, 119));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PILIH PRAKTIKUM");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -66,7 +67,7 @@ public class PilihP extends javax.swing.JFrame {
                 .addComponent(TeluLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(125, 125, 125)
+                .addGap(106, 106, 106)
                 .addComponent(TeluLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
         );
@@ -237,8 +238,8 @@ public class PilihP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        datapribadi dp = new datapribadi();
-        dp.show();
+        Profile pf = new Profile();
+        pf.show();
 
         dispose();
     }//GEN-LAST:event_BackButtonActionPerformed
