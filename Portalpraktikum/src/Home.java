@@ -9,11 +9,6 @@
  */
 
 import classes.handler;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Dictionary;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Home extends javax.swing.JFrame {
 
@@ -245,9 +240,9 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_username_fieldActionPerformed
 
     private void signin_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signin_buttonActionPerformed
-        
+        handler db;
+        db = new handler(username_field.getText(), password_field.getPassword());
         try {
-            handler db = new handler(username_field.getText(), password_field.getText());
             if (!db.user_validation()){
             System.out.println("User not found");
             gaketemu.setText("User not found");

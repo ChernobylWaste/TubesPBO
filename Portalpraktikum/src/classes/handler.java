@@ -14,8 +14,12 @@ public class handler {
     private mysql database = new mysql();
     private Dictionary data;
     
-    public handler(String username, String password) throws Exception{
-        this.data = database.get_user_data(username, password);
+    public handler(String username, char[] password){
+        try{
+            this.data = database.get_user_data(username, password);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
     
     public boolean user_validation(){

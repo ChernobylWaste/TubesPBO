@@ -34,9 +34,11 @@ public class mysql {
         }
     }
     
-    public Dictionary get_user_data(String username, String password) throws SQLException{
+    public Dictionary get_user_data(String username, char[] password) throws SQLException{
         Statement state = conn.createStatement();
         ResultSet res = null;
+        
+        String pass = String.valueOf(password);
         
         // Fetching data from sql
         if(state.execute("SELECT * FROM users")) {
@@ -49,7 +51,7 @@ public class mysql {
             if(!res.getString("username").equals(username)) {
                 continue;
             }
-            if(!res.getString("password").equals(password)){
+            if(!res.getString("password").equals(pass)){
                 continue;
             }
             data.put("validate", "true");
