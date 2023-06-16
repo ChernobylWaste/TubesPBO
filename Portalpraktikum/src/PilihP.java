@@ -341,14 +341,20 @@ public class PilihP extends javax.swing.JFrame {
 
     private void hapusimvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusimvActionPerformed
         // TODO add your handling code here:
+        database.removePraktikan("imv_praktikum");
+
     }//GEN-LAST:event_hapusimvActionPerformed
 
     private void hapusdaskomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusdaskomActionPerformed
         // TODO add your handling code here:
+        database.removePraktikan("daskom_praktikum");
+
     }//GEN-LAST:event_hapusdaskomActionPerformed
 
     private void hapusfisdasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusfisdasActionPerformed
         // TODO add your handling code here:
+        database.removePraktikan("fisdas_praktikum");
+
     }//GEN-LAST:event_hapusfisdasActionPerformed
 
     /**

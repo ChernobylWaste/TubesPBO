@@ -19,7 +19,6 @@ public class Profile extends javax.swing.JFrame {
         initComponents();
         User user = User.getInstance();
         nama_praktikan1.setText(user.getUsername());
-        mbcinfo.setText("Agus");
         nim_praktikan.setText(Integer.toString(user.getNim()));
         prodi_praktikan.setText(user.getProdi());
     }
@@ -329,14 +328,15 @@ public class Profile extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addGap(32, 32, 32)
                         .addComponent(mbcinfo)
-                        .addGap(39, 39, 39)
+                        .addGap(35, 35, 35)
                         .addComponent(imvinfo)
-                        .addGap(27, 27, 27)
+                        .addGap(29, 29, 29)
                         .addComponent(daskominfo)
-                        .addGap(37, 37, 37)
-                        .addComponent(fisdasinfo)))
+                        .addGap(28, 28, 28)
+                        .addComponent(fisdasinfo)
+                        .addGap(19, 19, 19)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
