@@ -226,7 +226,7 @@ public class Profile extends javax.swing.JFrame {
 
         TabelListPrak.setAutoCreateRowSorter(true);
         TabelListPrak.setBackground(new java.awt.Color(154, 179, 245));
-        TabelListPrak.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        TabelListPrak.setFont(new java.awt.Font("Gill Sans MT", 1, 18)); // NOI18N
         TabelListPrak.setForeground(new java.awt.Color(0, 0, 0));
         TabelListPrak.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
