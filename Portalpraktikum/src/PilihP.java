@@ -202,7 +202,7 @@ public class PilihP extends javax.swing.JFrame {
 
         status.setEditable(false);
         status.setBackground(new java.awt.Color(203, 241, 245));
-        status.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        status.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         status.setForeground(new java.awt.Color(0, 0, 0));
         status.setBorder(null);
 
@@ -251,7 +251,7 @@ public class PilihP extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
