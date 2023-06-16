@@ -8,6 +8,7 @@
  * @author Just Mine
  */
 import classes.User;
+
 import classes.mysql;
 
 public class Profile extends javax.swing.JFrame {
@@ -15,14 +16,15 @@ public class Profile extends javax.swing.JFrame {
     /**
      * Creates new form Profile
      */
+    
+    private mysql database;
     public Profile() {
         initComponents();
         User user = User.getInstance();
         nama_praktikan1.setText(user.getUsername());
         nim_praktikan.setText(Integer.toString(user.getNim()));
         prodi_praktikan.setText(user.getProdi());
-//        mysql check = mysql.getInstance();
-//        check.checkPraktikan("mbc");{mbcinfo.setText(user.getUsername());};
+        database = mysql.getInstance();
             
     }
 
@@ -55,10 +57,11 @@ public class Profile extends javax.swing.JFrame {
         jToggleButton2 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelListPrak = new javax.swing.JTable();
-        mbcinfo = new javax.swing.JTextField();
-        daskominfo = new javax.swing.JTextField();
-        fisdasinfo = new javax.swing.JTextField();
-        imvinfo = new javax.swing.JTextField();
+        check = new javax.swing.JToggleButton();
+        infombc = new javax.swing.JTextField();
+        infoimv = new javax.swing.JTextField();
+        infodaskom = new javax.swing.JTextField();
+        infofisdas = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -217,7 +220,7 @@ public class Profile extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(84, 91, 119));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("PRAKTIKUM YANG DIIKUTI");
+        jLabel2.setText("PRAKTIKUM YANG TERSEDIA");
 
         jToggleButton2.setBackground(new java.awt.Color(22, 120, 191));
         jToggleButton2.setText("ENROLL PRAKTIKUM");
@@ -256,93 +259,91 @@ public class Profile extends javax.swing.JFrame {
         TabelListPrak.setShowGrid(true);
         jScrollPane1.setViewportView(TabelListPrak);
 
-        mbcinfo.setEditable(false);
-        mbcinfo.setBackground(new java.awt.Color(194, 222, 220));
-        mbcinfo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        mbcinfo.setForeground(new java.awt.Color(0, 0, 0));
-        mbcinfo.setText("TIDAK MENGIKUTI");
-        mbcinfo.addActionListener(new java.awt.event.ActionListener() {
+        check.setBackground(new java.awt.Color(22, 120, 191));
+        check.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        check.setForeground(new java.awt.Color(0, 0, 0));
+        check.setText("CHECK");
+        check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mbcinfoActionPerformed(evt);
+                checkActionPerformed(evt);
             }
         });
 
-        daskominfo.setEditable(false);
-        daskominfo.setBackground(new java.awt.Color(194, 222, 220));
-        daskominfo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        daskominfo.setForeground(new java.awt.Color(0, 0, 0));
-        daskominfo.setText("TIDAK MENGIKUTI");
-        daskominfo.addActionListener(new java.awt.event.ActionListener() {
+        infombc.setEditable(false);
+        infombc.setBackground(new java.awt.Color(167, 236, 238));
+        infombc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        infombc.setForeground(new java.awt.Color(0, 0, 0));
+        infombc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                daskominfoActionPerformed(evt);
+                infombcActionPerformed(evt);
             }
         });
 
-        fisdasinfo.setEditable(false);
-        fisdasinfo.setBackground(new java.awt.Color(194, 222, 220));
-        fisdasinfo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        fisdasinfo.setForeground(new java.awt.Color(0, 0, 0));
-        fisdasinfo.setText("TIDAK MENGIKUTI");
-        fisdasinfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fisdasinfoActionPerformed(evt);
-            }
-        });
+        infoimv.setEditable(false);
+        infoimv.setBackground(new java.awt.Color(167, 236, 238));
+        infoimv.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        infoimv.setForeground(new java.awt.Color(0, 0, 0));
 
-        imvinfo.setEditable(false);
-        imvinfo.setBackground(new java.awt.Color(194, 222, 220));
-        imvinfo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        imvinfo.setForeground(new java.awt.Color(0, 0, 0));
-        imvinfo.setText("TIDAK MENGIKUTI");
-        imvinfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imvinfoActionPerformed(evt);
-            }
-        });
+        infodaskom.setBackground(new java.awt.Color(167, 236, 238));
+        infodaskom.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        infodaskom.setForeground(new java.awt.Color(0, 0, 0));
+
+        infofisdas.setBackground(new java.awt.Color(167, 236, 238));
+        infofisdas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        infofisdas.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(126, 126, 126)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mbcinfo)
-                            .addComponent(daskominfo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(fisdasinfo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(imvinfo))))
-                .addContainerGap())
+                                .addGap(143, 143, 143)
+                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(infombc)
+                            .addComponent(infoimv, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                            .addComponent(infodaskom, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                            .addComponent(infofisdas, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                            .addComponent(check, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+                        .addGap(3, 3, 3)))
+                .addGap(70, 70, 70))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGap(74, 74, 74)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(mbcinfo)
-                        .addGap(35, 35, 35)
-                        .addComponent(imvinfo)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(infombc)
                         .addGap(29, 29, 29)
-                        .addComponent(daskominfo)
-                        .addGap(28, 28, 28)
-                        .addComponent(fisdasinfo)
-                        .addGap(19, 19, 19)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                        .addComponent(infoimv)
+                        .addGap(33, 33, 33)
+                        .addComponent(infodaskom)
+                        .addGap(26, 26, 26)
+                        .addComponent(infofisdas)
+                        .addGap(9, 9, 9)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(check))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -432,21 +433,18 @@ public class Profile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nama_praktikan1ActionPerformed
 
-    private void mbcinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mbcinfoActionPerformed
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
+        database.checkPraktikan("mbc_praktikum"); 
+        database.checkPraktikan("imv_praktikum");
+        database.checkPraktikan("fisdas_praktikum");
+        database.checkPraktikan("daskom_praktikum");
+        
         // TODO add your handling code here:
-    }//GEN-LAST:event_mbcinfoActionPerformed
+    }//GEN-LAST:event_checkActionPerformed
 
-    private void daskominfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daskominfoActionPerformed
+    private void infombcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infombcActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_daskominfoActionPerformed
-
-    private void fisdasinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fisdasinfoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fisdasinfoActionPerformed
-
-    private void imvinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imvinfoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_imvinfoActionPerformed
+    }//GEN-LAST:event_infombcActionPerformed
 
     /**
      * @param args the command line arguments
@@ -488,9 +486,11 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JLabel TeluLogo;
     private javax.swing.JLabel TeluLogo1;
     private javax.swing.JLabel TeluLogo2;
-    private javax.swing.JTextField daskominfo;
-    private javax.swing.JTextField fisdasinfo;
-    private javax.swing.JTextField imvinfo;
+    private javax.swing.JToggleButton check;
+    private javax.swing.JTextField infodaskom;
+    private javax.swing.JTextField infofisdas;
+    private javax.swing.JTextField infoimv;
+    private javax.swing.JTextField infombc;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -504,7 +504,6 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JTextField mbcinfo;
     private javax.swing.JTextField nama_praktikan1;
     private javax.swing.JTextField nim_praktikan;
     private javax.swing.JTextField prodi_praktikan;

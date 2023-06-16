@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
+
 /**
  *
  * @author Ahda
@@ -20,7 +21,7 @@ public class mysql {
     private String username_db = "root";
     private String password_db = "";
     private Connection conn;
-
+   
     private mysql() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -107,7 +108,8 @@ public class mysql {
                 res = state.getResultSet();
                 while(res.next()){
                     if(res.getString("praktikan").equals(user.getUsername())){
-                        check = true;
+                        check = true; System.out.println(lab +" terdaftar");
+                      
                     }
                 }
             }
