@@ -21,6 +21,9 @@ public class Profile extends javax.swing.JFrame {
         nama_praktikan1.setText(user.getUsername());
         nim_praktikan.setText(Integer.toString(user.getNim()));
         prodi_praktikan.setText(user.getProdi());
+//        mysql check = mysql.getInstance();
+//        check.checkPraktikan("mbc");{mbcinfo.setText(user.getUsername());};
+            
     }
 
     /**
