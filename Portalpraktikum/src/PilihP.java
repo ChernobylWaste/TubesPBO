@@ -49,6 +49,7 @@ public class PilihP extends javax.swing.JFrame {
         hapusimv = new javax.swing.JToggleButton();
         hapusdaskom = new javax.swing.JToggleButton();
         hapusfisdas = new javax.swing.JToggleButton();
+        status = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -199,6 +200,12 @@ public class PilihP extends javax.swing.JFrame {
             }
         });
 
+        status.setEditable(false);
+        status.setBackground(new java.awt.Color(203, 241, 245));
+        status.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        status.setForeground(new java.awt.Color(0, 0, 0));
+        status.setBorder(null);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -233,6 +240,10 @@ public class PilihP extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(IMVLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(33, 33, 33))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +251,7 @@ public class PilihP extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -259,7 +270,9 @@ public class PilihP extends javax.swing.JFrame {
                             .addComponent(FisdasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(hapusfisdas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(11, 11, 11)))
-                .addGap(88, 88, 88)
+                .addGap(18, 18, 18)
+                .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(IMVLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -317,43 +330,52 @@ public class PilihP extends javax.swing.JFrame {
     private void MBCButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MBCButtonActionPerformed
         // TODO add your handling code here:
         database.addPraktikan("mbc_praktikum");
+        status.setText("SUKSES ENROLL MBC");
+        
     }//GEN-LAST:event_MBCButtonActionPerformed
 
     private void IMVButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMVButtonActionPerformed
         // TODO add your handling code here:
         database.addPraktikan("imv_praktikum");
+        status.setText("SUKSES ENROLL IMV");
     }//GEN-LAST:event_IMVButtonActionPerformed
 
     private void DaskomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaskomButtonActionPerformed
         // TODO add your handling code here:
         database.addPraktikan("daskom_praktikum");
+        status.setText("SUKSES ENROLL DASKOM");
     }//GEN-LAST:event_DaskomButtonActionPerformed
 
     private void FisdasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FisdasButtonActionPerformed
         // TODO add your handling code here:
         database.addPraktikan("fisdas_praktikum");
+        status.setText("SUKSES ENROLL FISDAS");
     }//GEN-LAST:event_FisdasButtonActionPerformed
 
     private void hapusmbcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusmbcActionPerformed
         // TODO add your handling code here:
         database.removePraktikan("mbc_praktikum");
+        status.setText("SUKSES KELUAR MBC");
     }//GEN-LAST:event_hapusmbcActionPerformed
 
     private void hapusimvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusimvActionPerformed
         // TODO add your handling code here:
         database.removePraktikan("imv_praktikum");
+        status.setText("SUKSES KELUAR IMV");
 
     }//GEN-LAST:event_hapusimvActionPerformed
 
     private void hapusdaskomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusdaskomActionPerformed
         // TODO add your handling code here:
         database.removePraktikan("daskom_praktikum");
+        status.setText("SUKSES KELUAR DASKOM");
 
     }//GEN-LAST:event_hapusdaskomActionPerformed
 
     private void hapusfisdasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusfisdasActionPerformed
         // TODO add your handling code here:
         database.removePraktikan("fisdas_praktikum");
+        status.setText("SUKSES KELUAR FISDAS");
 
     }//GEN-LAST:event_hapusfisdasActionPerformed
 
@@ -412,5 +434,6 @@ public class PilihP extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField status;
     // End of variables declaration//GEN-END:variables
 }
